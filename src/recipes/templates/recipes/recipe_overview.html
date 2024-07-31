@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>
+        Recipe List
+    </title>
+</head>
+
+<body style="background-color:rgb(165, 141, 111)">
+    <div style="width: 100%; margin-top: 10px; display: flex; justify-content: center;">
+        <img src="../../static/recipes/images/recipe_list.jpg" alt="home"
+            style="width: 100%; max-width: 600px; max-height: 400px; margin-bottom: 15px;">
+    </div>
+    <center>
+        <table border="1" cellpadding="5" cellspacing="2" width="600" height="150"
+        style="background-color: rgb(221, 207, 189);">
+            {% for object in object_list %}
+            <tr>
+                <td align="center"><a href="{{object.get_absolute_url}}">
+                        {{object.name}}
+                    </a></td>
+                <td>
+                    <center><img src="{{object.pic.url}}" width="150" height="150" /></center>
+                </td>
+                <td align="center">
+                    {{object.description}}
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+    </center>
+</body>
+
+</html>

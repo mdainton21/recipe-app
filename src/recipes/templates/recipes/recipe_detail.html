@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>
+        Recipe Details
+    </title>
+</head>
+
+<body style="background-color: rgb(160, 211, 187);">
+    <center>
+        <img src="{{object.pic.url}}" width="200" height="200" style="display: flex; margin-top: 80px; border: 5px solid #ffffff" />
+
+        <h2 style="display: flex; justify-content: center; margin-top: 30px;"> {{object.name}} </h2>
+
+        <table cellpadding="10" style="display: flex; justify-content: center; margin-top: 5px;">
+            <tr>
+                <td>
+                    <b>Cooking time: </b> {{object.cooking_time}} minutes
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <b>Ingredients: </b> {{object.ingredients}}
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <b>Difficulty: </b> {{object.calculate_difficulty}}
+                </td>
+            </tr>
+        </table>
+
+        <p style="display: flex; justify-content: center; margin-top: 20px;">{{object.description}} </p>
+        <br>
+
+    </center>
+</body>
+
+</html>

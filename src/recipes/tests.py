@@ -60,4 +60,18 @@ class MyRecipeTest(TestCase):
         #Check to make sure it is shorter than max length
         self.assertEqual(max_length, 225)
 
+
+    #Checks if difficulty matches
+    def test_calculate_difficulty(self):
+        recipe = Recipe.objects.get(id=1)
+        self.assertEqual(recipe.calculate_difficulty(), "Hard")
+
+
+    #Checks that link goes to correct location
+    def test_get_absolute_url(self):
+        # get absolute_url 
+        recipe = Recipe.objects.get(id=1)
+        # Loads url /recipes/list/1
+        self.assertEqual(recipe.get_absolute_url(), '/recipes/list/1')
+
     
