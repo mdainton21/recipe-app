@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<style type="text/css">
+    body {
+        background-color: rgb(61, 105, 74);
+    }
+
+    h2 {
+        font-family: Roboto, sans-serif;
+        color: #ffffff;
+    }
+
+    .login_btn {
+        font-family: Roboto, sans-serif;
+        height: 20px;
+        font-size: 16px;
+        margin-bottom: 15px;
+        background-color: #ffffff;
+        border-radius: 5px;
+        color: rgb(61, 105, 74);
+        text-decoration: none;
+        padding: 10px;
+        text-align: center;
+    }
+
+    .logout_box {
+        background: #ffffff44;
+        margin-top: 150px;
+        padding: 15px;
+        border-radius: 5px;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        height: 275px;
+        width: 30%;
+        font-size: 20px;
+        text-align: center;
+    }
+</style>
+
+<head>
+    <title>Logout Successful</title>
+</head>
+
+<body>
+    <center>
+        <div class="logout_box">
+            <h2>Successfully Logged Out!</h2>
+
+            <h2>Thank you for using the App</h2>
+            <br />
+            <a href="{%url 'login' %}" class="login_btn"> Login </a>
+            <br />
+        </div>
+    </center>
+</body>
+
+</html>

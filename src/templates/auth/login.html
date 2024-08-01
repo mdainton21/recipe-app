@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<style type="text/css">
+    body {
+        background-color: rgb(170, 66, 66);
+    }
+
+    h2 {
+        font-family: Roboto, sans-serif;
+        color: #ffffff;
+    }
+
+    form {
+        font-family: Roboto, sans-serif;
+        color: #ffffff;
+    }
+
+    .login_pic {
+        width: 100%;
+        max-width: 600px;
+        max-height: 400px;
+        margin-top: 10px;
+        display: flex;
+        justify-content: center;
+        border: 5px solid rgb(255, 255, 255)
+    }
+
+    .login_btn {
+        font-family: Roboto, sans-serif;
+        width: 60px;
+        height: 30px;
+        margin-bottom: 45px;
+        background-color: rgb(255, 51, 51);
+        border-radius: 5px;
+        color: rgb(255, 255, 255);
+        text-decoration: none;
+        padding: 5px;
+    }
+</style>
+
+<head>
+    <title>
+        Login
+    </title>
+</head>
+
+<body>
+    <center>
+        <div>
+            <img src="../../static/recipes/images/login.jpg" alt="home" class="login_pic">
+        </div>
+        <h2>
+            Please log in
+        </h2>
+        <br />
+
+        {% comment %} check for error message {% endcomment %}
+        {% if error_message %}
+        {{error_message}}
+        {% endif %}
+
+        <div>
+            <form action="" method="POST">
+                {% csrf_token %}
+
+                {{form}}
+
+                <button type="submit" class="login_btn">Login</button>
+            </form>
+        </div>
+    </center>
+</body>
+
+</html>

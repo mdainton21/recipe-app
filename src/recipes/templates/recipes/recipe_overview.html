@@ -1,30 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
 
+<style type="text/css">
+    body {
+        background-color: rgb(165, 141, 111);
+    }
+
+    p {
+        font-family: Roboto, sans-serif;
+    }
+
+    table {
+        background-color: rgb(221, 207, 189);
+        margin-top: 15px
+    }
+
+    .pic_container {
+        width: 100%;
+        margin-top: 10px;
+        display: flex;
+        justify-content: center;
+    }
+
+    .list_pic {
+        width: 100%;
+        max-width: 600px;
+        max-height: 400px;
+        margin-bottom: 15px;
+        border: 5px solid rgb(190, 255, 70)
+    }
+
+    .logout_btn {
+        font-family: Roboto, sans-serif;
+        height: 20px;
+        margin-bottom: 45px;
+        font-size: 16px;
+        background-color: rgb(221, 207, 189);
+        border-radius: 5px;
+        color: rgb(165, 141, 111);
+        text-decoration: none;
+        padding: 10px;
+        text-align: center;
+    }
+
+    .recipe_link {
+        font-family: Roboto, sans-serif;
+        font-size: 16px;
+        color: rgb(0, 0, 0);
+        text-decoration: none;
+        text-align: center;
+    }
+</style>
+
 <head>
     <title>
         Recipe List
     </title>
 </head>
 
-<body style="background-color:rgb(165, 141, 111)">
-    <div style="width: 100%; margin-top: 10px; display: flex; justify-content: center;">
-        <img src="../../static/recipes/images/recipe_list.jpg" alt="home"
-            style="width: 100%; max-width: 600px; max-height: 400px; margin-bottom: 15px;">
+<body>
+    <div class="pic_container">
+        <img src="../../static/recipes/images/recipe_list.jpg" alt="home" class="list_pic">
     </div>
     <center>
-        <table border="1" cellpadding="5" cellspacing="2" width="600" height="150"
-        style="background-color: rgb(221, 207, 189);">
+        <a href="{%url 'logout' %}" class="logout_btn"> Logout </a>
+
+        <table border="1" cellpadding="5" cellspacing="2" width="800" height="150">
             {% for object in object_list %}
             <tr>
-                <td align="center"><a href="{{object.get_absolute_url}}">
-                        {{object.name}}
+
+                <td align="center"><a href="{{object.get_absolute_url}}" class="recipe_link">
+                        <b>{{object.name}}</b>
                     </a></td>
+
                 <td>
                     <center><img src="{{object.pic.url}}" width="150" height="150" /></center>
                 </td>
+
                 <td align="center">
-                    {{object.description}}
+                    <p>{{object.description}}</p>
                 </td>
             </tr>
             {% endfor %}

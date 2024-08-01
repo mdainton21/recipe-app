@@ -1,23 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
 
+<style type="text/css">
+    body {
+        background-color: #0f55a0;
+    }
+
+    h1 {
+        font-family: Roboto, sans-serif;
+        color: #fdf102;
+    }
+
+    h3 {
+        font-family: Roboto, sans-serif;
+        color: #fdf102;
+    }
+
+    .welcome_pic {
+        width: 100%;
+        max-width: 600px;
+        max-height: 400px;
+        margin-top: 10px;
+        display: flex;
+        justify-content: center;
+        border: 5px solid rgb(0, 13, 126)
+    }
+
+    .login_btn {
+        font-family: Roboto, sans-serif;
+        margin-bottom: 45px;
+        font-size: 16px;
+        background-color: rgb(0, 13, 126);
+        border-radius: 5px;
+        color: #fdf102;
+        text-decoration: none;
+        padding: 10px;
+        text-align: center;
+    }
+</style>
+
 <head>
     <title>
         Recipe App Home
     </title>
 </head>
 
-<body style="background-color: #0f55a0;">
-    <div style="width: 100%; margin-top: 10px; display: flex; justify-content: center;">
-        <img src="../../static/recipes/images/welcome.jpg" alt="home" style="width: 100%; max-width: 600px; max-height: 400px;">
-    </div>
-    <h1 style="display: flex; justify-content: center; color: #fdf102; ">
-        Welcome to the Recipe App!
-    </h1>
-    <br/>
-    <h3 style="display: flex; justify-content: center; color: #fdf102; ">
-        See our wide range of recipes, and maybe find something new for you to enjoy along the way!
-    </h3>
+<body>
+    <center>
+        <div>
+            <img src="../../static/recipes/images/welcome.jpg" alt="home" class="welcome_pic">
+        </div>
+        <h1>
+            Welcome to the Recipe App!
+        </h1>
+        <br />
+        <h3>
+            See our wide range of recipes, and maybe find something new for you to enjoy along the way!
+        </h3>
+        <br />
+
+        <a href="{%url 'login' %}" class="login_btn"> Login </a>
+    </center>
+
 </body>
 
 </html>
