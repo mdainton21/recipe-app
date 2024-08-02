@@ -17,7 +17,7 @@
 
     .pic_container {
         width: 100%;
-        margin-top: 10px;
+        margin-top: 20px;
         display: flex;
         justify-content: center;
     }
@@ -63,8 +63,8 @@
         <img src="../../static/recipes/images/recipe_list.jpg" alt="home" class="list_pic">
     </div>
     <center>
+        <a href="{% url 'recipes:search' %}" class="logout_btn">Search for a Recipe</a>
         <a href="{%url 'logout' %}" class="logout_btn"> Logout </a>
-
         <table border="1" cellpadding="5" cellspacing="2" width="800" height="150">
             {% for object in object_list %}
             <tr>

@@ -1,5 +1,6 @@
 from django.test import TestCase
 from .models import Recipe
+from .forms import RecipeSearchForm
 
 # Create your tests here.
 
@@ -64,7 +65,7 @@ class MyRecipeTest(TestCase):
     #Checks if difficulty matches
     def test_calculate_difficulty(self):
         recipe = Recipe.objects.get(id=1)
-        self.assertEqual(recipe.calculate_difficulty(), "Hard")
+        self.assertEqual(recipe.difficulty, "Hard")
 
 
     #Checks that link goes to correct location
@@ -74,4 +75,22 @@ class MyRecipeTest(TestCase):
         # Loads url /recipes/list/1
         self.assertEqual(recipe.get_absolute_url(), '/recipes/list/1')
 
+
+    def test_search_form_validate(self):
+        form = RecipeSearchForm(data={
+            "search_by": "name",
+            "search_term": "Test Recipe",
+            "cooking_time": "",
+            "difficulty": "",
+        })
+
+        #Checks if form is valid
+        self.assertTrue(form.is_valid())
+
+    def test_search_form_invalid_data(self):
+        #Create invalid recipe data
+        form = RecipeSearchForm(data={})
+
+        # Checks if form is invalid
+        self.assertFalse(form.is_valid())
     
