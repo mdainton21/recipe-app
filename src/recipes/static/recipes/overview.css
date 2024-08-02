@@ -1,0 +1,48 @@
+body {
+    background-color: rgb(165, 141, 111);
+}
+
+p {
+    font-family: Roboto, sans-serif;
+}
+
+table {
+    background-color: rgb(221, 207, 189);
+    margin-top: 15px
+}
+
+.pic_container {
+    width: 100%;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.list_pic {
+    width: 100%;
+    max-width: 600px;
+    max-height: 400px;
+    margin-bottom: 15px;
+    border: 5px solid rgb(190, 255, 70)
+}
+
+.logout_btn {
+    font-family: Roboto, sans-serif;
+    height: 20px;
+    margin-bottom: 45px;
+    font-size: 16px;
+    background-color: rgb(221, 207, 189);
+    border-radius: 5px;
+    color: rgb(165, 141, 111);
+    text-decoration: none;
+    padding: 10px;
+    text-align: center;
+}
+
+.recipe_link {
+    font-family: Roboto, sans-serif;
+    font-size: 16px;
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    text-align: center;
+}
