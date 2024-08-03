@@ -4,7 +4,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.decorators import login_required
 from .models import Recipe
 import pandas as pd
-from .forms import RecipeSearchForm
+from .forms import RecipeSearchForm, NewRecipeForm
 from .utils import get_chart
 
 
@@ -22,6 +22,10 @@ class RecipeListView(LoginRequiredMixin, ListView):
 class RecipeDetailView(LoginRequiredMixin, DetailView): 
     model = Recipe
     template_name = 'recipes/recipe_detail.html'
+
+#About me page
+def about(request):
+    return render(request, "recipes/about_me.html")
 
 
 @login_required
@@ -103,3 +107,22 @@ def search(request):
 
     # Loads page using "context" information
     return render(request, "recipes/recipe_search.html", context)
+
+@login_required
+def add_recipe(request):
+
+    if request.method == "POST":
+        new_recipe_form = NewRecipeForm(request.POST, request.FILES)
+
+        if new_recipe_form.is_valid():
+            new_recipe_form.save()
+            return redirect("recipes:list")
+        
+    else:
+        new_recipe_form = NewRecipeForm()
+
+    context = {
+        "new_recipe_form": new_recipe_form
+    }
+
+    return render(request, "recipes/add_recipe.html", context)

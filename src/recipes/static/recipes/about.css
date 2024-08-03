@@ -1,0 +1,58 @@
+body {
+    background-color: #4e4534;
+}
+
+h2 {
+    font-family: Roboto, sans-serif;
+    color: #ffffff;
+}
+
+h3 {
+    font-family: Roboto, sans-serif;
+    color: #ffffff;
+}
+
+.about_pic {
+    width: 100%;
+    max-width: 600px;
+    max-height: 400px;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: center;
+    border: 5px solid rgb(255, 255, 255)
+}
+
+.about_pic2 {
+    width: 55%;
+    max-width: 400px;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: center;
+    border: 5px solid rgb(255, 255, 255)
+}
+
+.nav_btn {
+    font-family: Roboto, sans-serif;
+    height: 20px;
+    margin-bottom: 45px;
+    font-size: 16px;
+    background-color: rgb(221, 207, 189);
+    border-radius: 5px;
+    color: #4e4534;;
+    text-decoration: none;
+    padding: 10px;
+    text-align: center;
+}
+
+.contact-box {
+    width: 60%;
+    margin: auto;
+    background-color: #7e6f55;
+    color: #ffffff;
+    text-decoration: none;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 10px;
+}

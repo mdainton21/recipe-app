@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8"> <!--The character set for the page-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="../../static/recipes/add.css">
+    <title>
+        Add Recipe
+    </title>
+</head>
+
+<body>
+    <center>
+        <div class="pic_container">
+            <img src="../../static/recipes/images/add_recipe.jpg" alt="add_recipe_header" class="add_pic">
+        </div>
+        <div class="Nav">
+            <a href="{% url 'recipes:list' %}" class="nav_btn">Return to List</a>
+            <a href="{% url 'recipes:about' %}" class="nav_btn">About Me</a>
+            <a href="{%url 'logout' %}" class="nav_btn"> Logout </a>
+        </div>
+        <h2>All fields are required.</h2>
+
+        {% if messages %} {% for message in messages %}
+        <script>
+            alert("{{ message }}");
+        </script>
+        {% endfor %} {% endif %}
+
+        <div class="add-form">
+            <form action="" method="POST" class="form_data" enctype="multipart/form-data">
+                {% csrf_token %}
+
+                <div class="box">
+                    <label for="id_name">Name:</label>
+                    <input type="text" name="name" id="id_name" required>
+                </div>
+
+                <div class="box">
+                    <label for="id_cooking_time">Cooking Time<br>(in minutes):</label>
+                    <input type="number" name="cooking_time" id="id_cooking_time" required>
+                </div>
+
+                <div class="box">
+                    <label for="id_ingredients">Ingredients:</label>
+                    <textarea name="ingredients" id="id_ingredients" required></textarea>
+                </div>
+
+                <div class="box">
+                    <label for="id_description">Description:</label>
+                    <textarea name="description" id="id_description" required></textarea>
+                </div>
+
+                <div class="pic-box">
+                    <label for="id_picture">Picture:</label>
+                    <input type="file" name="pic" id="id_picture">
+                </div>
+
+                <button type="submit" class="create-btn">Add Recipe</button>
+            </form>
+        </div>
+    </center>
+</body>
+
+</html>

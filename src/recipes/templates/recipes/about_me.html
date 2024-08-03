@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8"> <!--The character set for the page-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="../../static/recipes/about.css">
+    <title>
+        About Me
+    </title>
+</head>
+
+<body>
+    <center>
+        <div>
+            <img src="../../static/recipes/images/about.jpg" alt="home" class="about_pic">
+        </div>
+        <div class="Nav">
+            <a href="{% url 'recipes:list' %}" class="nav_btn">Recipe List</a>
+            <a href="{%url 'logout' %}" class="nav_btn"> Logout </a>
+        </div>
+        <br />
+        <h2>
+            Thank you for using my App!
+        </h2>
+        <br />
+        <div class="contact-box">
+            <h3>Hi! I'm Matt and I hope you enjoyed using the app. If you
+                want contact me or see more projects I've done,
+                check out these links below:
+            </h3>
+            <div><b>Email:</b> mdainton21@gmail.com</div>
+            <br />
+            <div><b>GitHub:</b> https://github.com/mdainton21</div>
+            <br />
+            <div><b>Portfolio:</b> https://mdainton21.github.io/portfolio-website/</div>
+            <br />
+            <div>
+                <img src="../../static/recipes/images/about2.jpg" alt="home" class="about_pic2">
+            </div>
+
+        </div>
+    </center>
+
+</body>
+
+</html>

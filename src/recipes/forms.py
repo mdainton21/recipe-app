@@ -21,3 +21,14 @@ class RecipeSearchForm(forms.Form):
         required=False,
         label="Difficulty"
     )
+
+class NewRecipeForm(forms.ModelForm):
+    class Meta:
+        model = Recipe
+        fields = [
+            "name",
+            "cooking_time",
+            "ingredients",
+            "description",
+            "pic"
+              ]

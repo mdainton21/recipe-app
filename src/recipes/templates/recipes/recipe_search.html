@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-{% load static %}
 <html lang="en">
 
 <head>
@@ -7,20 +6,23 @@
    <meta name="viewport" content="width=device-width, initial-scale=1">
    <link rel="stylesheet" type="text/css" href="../../static/recipes/search.css">
    <title>
-       Recipe List
+      Recipe List
    </title>
 </head>
 
 <body>
    <center>
-   <div class="pic_container">
-      <img src="../../static/recipes/images/Search.jpg" alt="search_header" class="search_pic">
-   </div>
-   <a href="{% url 'recipes:list' %}" class="logout_btn">Return to List</a>
-   <a href="{%url 'logout' %}" class="logout_btn"> Logout </a>
-   {% block content %}
-   <h1 class="search-header">Search for recipes</h1>
-</center>
+      <div class="pic_container">
+         <img src="../../static/recipes/images/Search.jpg" alt="search_header" class="search_pic">
+      </div>
+      <div class="Nav">
+         <a href="{% url 'recipes:list' %}" class="logout_btn">Return to List</a>
+         <a href="{% url 'recipes:about' %}" class="logout_btn">About Me</a>
+         <a href="{%url 'logout' %}" class="logout_btn"> Logout </a>
+      </div>
+      {% block content %}
+      <h1>Search for recipes</h1>
+   </center>
 
    <!-- Search form -->
    <div class="search-form">

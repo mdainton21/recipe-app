@@ -1,6 +1,9 @@
 from django.test import TestCase
+from django.urls import reverse
+from django.contrib.auth.models import User
 from .models import Recipe
 from .forms import RecipeSearchForm
+
 
 # Create your tests here.
 
@@ -75,6 +78,27 @@ class MyRecipeTest(TestCase):
         # Loads url /recipes/list/1
         self.assertEqual(recipe.get_absolute_url(), '/recipes/list/1')
 
+    #Test for Login
+    def test_login_list(self):
+        # Log in a fake user
+        user = User.objects.create_user(username="testuser", password="testpassword")
+        self.client.login(username="testuser", password="testpassword")
+        
+        #Check if they can acess the list page
+        response = self.client.get(reverse("recipes:list"))
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, "recipes/recipe_overview.html")
+
+    #Test for Login #2
+    def test_login_list(self):
+        # Log in a fake user
+        user = User.objects.create_user(username="testuser", password="testpassword")
+        self.client.login(username="testuser", password="testpassword")
+        
+        #Check if they can acess the list page
+        response = self.client.get(reverse("recipes:add_recipe"))
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, "recipes/add_recipe.html")
 
     def test_search_form_validate(self):
         form = RecipeSearchForm(data={
